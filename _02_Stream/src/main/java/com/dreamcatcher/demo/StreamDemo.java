@@ -15,7 +15,8 @@ public class StreamDemo {
     public static void main(String[] args) {
         List<Author> authors = getAuthors();
 
-        test16();
+        test17();
+        //test16();
         //test15();
         //test14();
         //test13();
@@ -31,6 +32,15 @@ public class StreamDemo {
         //test03();
         //test02();
         //test01(authors);
+    }
+
+    private static void test17() {
+    //判断作家是否都没有超过100岁的。
+        List<Author> authors = getAuthors();
+        boolean b = authors.stream()
+                .noneMatch(author -> author.getAge() > 100);
+
+        System.out.println(b);
     }
 
     private static void test16() {
